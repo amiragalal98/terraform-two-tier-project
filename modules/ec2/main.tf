@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
     ami = ""
     instance_type = "t2.micro"
-    subnet_id = var.subnet_id
+    subnet_id = module.vpc.private_subnets[0]
     tags = {
         Name = "WebServer"
     }
